@@ -9,6 +9,15 @@ require("dotenv").config();
 
 const app = express();
 
+// 指定したディレクトリ(この場合は./public)にある静的ファイルをクライアントに返す
+// → node.jsでコンパイルせずにクライアントにそのまま返すファイルのこと。
+// → 静的ファイルとは、サーバーサイドで動的に生成されるものではなく、
+//   そのままの形でクライアントに提供されるファイルのこと
+//   例えば、index.html、style.css、app.jsや画像ファイルなど
+// http://localhost:8000/ へのリクエストが来たとき、express.staticミドルウェアは、
+// デフォルトではindex.htmlをクライアントに返す
+app.use(express.static("./public/"));
+
 // use ミドルウェア
 // json形式を内部で対応できる
 app.use(express.json());

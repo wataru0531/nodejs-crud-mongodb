@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タスクの編集 | Node.js + MongoDB crud application</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Google アイコン -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="../style.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer type="module" src="../editTask.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <form action="" class="single-task-form" id="js-single-task-form">
+      <h4>タスクの編集</h4>
+
+      <dl class="form__items">
+        <div class="form__item">
+          <div class="form__contents">
+            <dt class="form__title">Task ID</dt>
+            <dd class="form__content task-edit-id" id="js-task-edit-id"></dd>
+          </div>
+        </div>
+
+        <!-- name -->
+        <div class="form__item">
+          <div class="form__contents">
+            <dt class="form__title">
+              <label for="title">Title</label>
+            </dt>
+            <dd class="form_content">
+              <input 
+                type="text" 
+                name="name" 
+                class="task-edit-name js-task-edit-name"
+                id="title"
+                placeholder="title"
+              >
+            </dd>
+          </div>
+        </div>
+
+        <!-- memo -->
+        <div class="form__item">
+          <div class="form__contens">
+            <dt class="form__title">
+              <label for="memo">Memo</label>
+            </dt>
+            <dd class="form__content">
+              <textarea 
+                name="" 
+                class="form__textarea js-task-edit-memo"
+                id="memo"
+                placeholder="Keep it within 300 characters."
+                maxlength="300"
+              ></textarea>
+            </dd>
+          </div>
+        </div>
+
+        <div class="form__item">
+          <div class="form__contens">
+            <!-- <dt class="form__title">完了・未完了</dt> -->
+            <dd class="form__content form-control checkbox">
+              <label>
+                <input 
+                  type="checkbox" 
+                  name="completed" 
+                  class="task-edit-completed"
+                  id="js-task-edit-completed"
+                >
+                <span class="">完了・未完了</span>
+              </label>
+            </dd>
+          </div>
+        </div>
+
+
+      </dl>
+
+      <!-- <div class="form-control">
+        <label for="">タスクID</label>
+        <p class="task-edit-id" ></p>
+      </div> -->
+
+      <!-- <div class="form-control">
+        <label for="name">名前</label>
+        <input type="text" name="name" class="task-edit-name" id="js-task-edit-name">
+      </div> -->
+
+      <!-- <div class="form-control checkbox">
+        <label>
+          <input 
+            type="checkbox" 
+            name="completed" 
+            class="task-edit-completed"
+            id="js-task-edit-completed"
+          >
+          <span>完了・未完了</span>
+        </label>
+      </div> -->
+
+
+      <div class="edit-btn-wrapper">
+        <button type="submit" class="block btn task-edit-btn">EDIT</button>
+      </div>
+
+      <div class="form-alert" id="js-form-alert"></div>
+
+      <a href="../index.html" class="btn back-link">Back To Task Page</a>
+
+    </form>
+  </div>
+
+</body>
+</html>

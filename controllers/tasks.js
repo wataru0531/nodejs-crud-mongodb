@@ -30,10 +30,26 @@ const getAllTasks = async (req, res) => {
 const createTask = async (req, res) => {
   // res.send("タスクを新規作成");
 
+  // 20文字以上超えた場合の処理
+  const { name, memo } = req.body;
+  // console.log(name);
+
+  if(name.length > 20){
+    return res.status(400).json({ error: "名前は20文字以内で入力してください" })
+  }
+
+  if(memo.length > 300){
+    return res.status(400).json({ error: "メモは300文字以内で入力してください" })
+  }
+
   try{
     const createTask = await Task.create(req.body);
 
-    return res.status(200).json(createTask);
+    // return res.status(200).json(createTask);
+    return res.status(200).json({
+      task: createTask, 
+      message: "タスクの追加に成功しました。"
+    });
 
   } catch(error) {
     // console.log(error);
@@ -72,7 +88,7 @@ const updateTask = async (req, res) => {
 
     const updatedTask = await Task.findOneAndUpdate(
       { _id: req.params.id },
-      req.body,
+      req.body, // 更新したい内容
       { 
         new: true,  // 更新後のドキュメントを返すようにする
         // runValidators: true // 更新時にバリデーションを実行
@@ -81,15 +97,28 @@ const updateTask = async (req, res) => {
 
     if(!updateTask) res.status(404).json({ message: `_id: ${req.params.id}は存在しません` });
 
-    return res.status(200).json(updatedTask);
+    return res.status(200).json({ message: "タスクの編集に成功しました。", updatedTask: updatedTask });
   } catch(error){
     res.status(500).json(error);
   }
 }
 
 // 削除
-const deleteTask = (req, res) => {
-  res.send(`ある特定のタスク(id: ${req.params.id})を削除しました。`);
+const deleteTask = async (req, res) => {
+  // res.send(`ある特定のタスク(id: ${req.params.id})を削除しました。`);
+
+  try{
+    const deleteTask = await Task.findOneAndDelete({ _id: req.params.id });
+
+    if(!deleteTask) {
+      return res.status(404).json({ message: `_id: ${req.params.id}の削除に失敗しました。` })
+    }
+
+    return res.status(200).json(deleteTask);
+  }catch(error){
+    res.status(500).json({ message: "削除に失敗しました", error: error})
+  }
+
 }
 
 module.exports = {
