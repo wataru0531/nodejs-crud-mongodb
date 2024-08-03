@@ -1,8 +1,8 @@
 
-// 
+// mongoose
+// → クライアント(Node.jsアプリケーション)とMongoDBデータベースを接続するためライブラリ
 
 const mongoose = require("mongoose");
-
 
 const connectDB = (url) => {
   
@@ -13,4 +13,3 @@ const connectDB = (url) => {
 }
 
 module.exports = connectDB;
-

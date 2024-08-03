@@ -14,12 +14,13 @@ const getAllTasks = async (req, res) => {
   // res.send("タスクを全て取得しました");
 
   try{
-    const allTask = await Task.find({});
+    const allTasks = await Task.find({});
+    console.log(allTasks)
 
     // サーバー側でres.jsonメソッドを使用することで、
     // JavaScriptオブジェクトを自動的にJSON文字列にシリアライズし、
     // HTTPレスポンスとしてクライアントに送信している
-    return res.status(200).json(allTask)
+    return res.status(200).json({ message: "すべてのタスクを取得しました。", allTasks: allTasks })
 
   } catch(error) {
     res.status.json(error);
@@ -114,11 +115,10 @@ const deleteTask = async (req, res) => {
       return res.status(404).json({ message: `_id: ${req.params.id}の削除に失敗しました。` })
     }
 
-    return res.status(200).json(deleteTask);
+    return res.status(200).json({message: "タスクの削除に成功しました", deleteTask: deleteTask});
   }catch(error){
     res.status(500).json({ message: "削除に失敗しました", error: error})
   }
-
 }
 
 module.exports = {

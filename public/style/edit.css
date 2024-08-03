@@ -1,0 +1,102 @@
+
+@import "./common.css";
+
+/* 編集ページのCSS */
+
+.form-edit {
+  margin: 6rem auto 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background-color: var(--form-backGroundColor);
+  border: 1px solid var(--grey-50);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+}
+
+.form-edit__items{
+  margin-top: 20px;
+}
+
+.form-edit__item:not(:first-child){
+  margin-top: 15px;
+}
+
+/* input */
+.form-edit__content .form-edit__input{
+  border: 1px solid var(--input-borderColor);
+  border-radius: var(--borderRadius);
+}
+
+/* textarea */
+.form-edit__content .form-edit__textarea{
+  height: 80px;
+  border: 1px solid var(--input-borderColor);
+  border-radius: var(--borderRadius);
+}
+
+.form-edit .form-edit-alert {
+  margin-top: 1rem;
+  color: var(--red-dark);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+}
+
+/* textarea */
+.form-edit__textarea{
+  height: 80px;
+}
+
+
+
+.single-task-form .form-alert {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.single-task-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.single-task-form p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.text-success {
+  color: var(--green-dark);
+}
+
+/* 戻るボタン */
+.back-top-btn-wrapper{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-top-btn {
+  color: var(--white);
+}
+
+
+.form-edit__content.checkbox{
+  display: block;
+}
+
+
+/* 完了・未完了  */
+.task-edit-completed {
+  width: auto;
+}
+
+.edit-btn-wrapper{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.task-edit-btn{
+  color: var(--white);
+}

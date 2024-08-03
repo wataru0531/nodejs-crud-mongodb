@@ -13,12 +13,17 @@
   <!-- Google アイコン -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style/style.css">
 
   <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script defer type="module" src="./script.js"></script>
+  <script defer type="module" src="./js/script.js"></script>
 </head>
 <body>
+  <!--
+    TODO
+    仮想ページのtitle、descriptionも動的に変更
+  -->
+
   <!-- ヘッダー -->
   <header class="header">
     <div class="header__inner">
@@ -30,14 +35,11 @@
       </div>
     </div>
   </header>
-
-
-  <!-- TODO テキストエリア　を挿入 -->
-  <form class="task-form" id="js-form">
-    <p class="task-form__title">Type your new task!!</p>
-
+  
+  <!-- form -->
+  <form class="form" id="js-form">
+    <p class="form__description">Type your new task!!</p>
     <dl class="form__items">
-      
         <!-- Title -->
         <div class="form__item">
           <div class="form__contents">
@@ -84,64 +86,32 @@
       -->
       <button class="btn submit-btn">Submit</button>
     </div>
-
-
-    <div class="form-control">
-      <!-- <label for="js-task-input">
-        Title
-        <input 
-          type="text" 
-          name="name" 
-          class="task-input"
-          id="js-task-input"
-          placeholder=""
-        >
-      </label> -->
-
-
-      <!-- <div class="form-alert" id="js-form-alert"></div> -->
-
-      <!-- <div class="btn-wrapper">
-        HTMLの仕様では、button要素のtype属性を明示的に指定しない場合、
-        デフォルトの値は submit となる
-        <button class="btn submit-btn">Submit</button>
-      </div> -->
-    </div>
-    
   </form>
 
-  
 
-  
-  <section class="tasks-container">
-    <div class="tasks" id="js-task">
-
+  <section class="tasks">
+    <div class="tasks__container" id="js-task">
       <!-- JSから挿入 -->
-
-      <!-- <div class="single-task task-completed">
-        <div class="single-task__block">
-          <h2>
-            <span class="material-symbols-outlined check">check_circle</span>
-            Next.js
-          </h2>
-  
-          <div class="task-links">
-  
-            <a href="./edit/index.html?id=6672e6e2ef854b7df4c9946f" class="edit-link">
-              <span class="material-symbols-outlined">edit</span>
-            </a>
-  
-            <button class="delete-btn" data-id="6672e6e2ef854b7df4c9946f">
-              <span class="material-symbols-outlined">delete</span>
-            </button>
+      <!--
+        <div class="task task-completed">
+            <div class="task__block">
+              <div class="task__title">
+                <span class="material-symbols-outlined check task-completed">check_circle</span>
+                <h2>title</h2>
+              </div>
+              <div class="task__links task-links">
+                <a href="./edit/index.html?id=669a7a655536c2fd21998e51" class="task-links__edit">
+                  <span class="material-symbols-outlined">edit</span>
+                </a>
+                <button class="task-links__delete delete-btn " data-id="669a7a655536c2fd21998e51">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+            <div class="task__description">編集を編集</div>
           </div>
-        </div>
-        <div class="single-task__description">
-          ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-        </div>
-      </div> -->
-        
-    </div>
+        </div> 
+      -->
   </section>
 
 </body>

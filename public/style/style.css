@@ -1,0 +1,158 @@
+
+@import "./common.css";
+
+/* フォーム */
+.form {
+  margin: 6rem auto 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 100%;
+  max-width: var(--fixed-width);
+  background-color: var(--form-backGroundColor);
+  border: 1px solid var(--grey-50);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+}
+
+.form__description{
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+
+.form__items{
+  margin-top: 20px;
+}
+
+.form__item:not(:first-child){
+  margin-top: 15px;
+}
+
+.form-alert {
+  color: var(--red-dark);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+}
+
+
+.form .form-alert {
+  margin-top: 1rem;
+}
+
+/* input */
+.form__content .task-input{
+  border: 1px solid var(--input-borderColor);
+  border-radius: var(--borderRadius);
+}
+
+/* textarea */
+.form__textarea{
+  height: 80px;
+  border: 1px solid var(--input-borderColor);
+  border-radius: var(--borderRadius);
+}
+
+.btn-wrapper{
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* 
+  タスク
+  JS側から挿入
+*/
+/* .loading-text {
+  visibility: hidden;
+} */
+
+.tasks {
+  width: 100%;
+  width: 90vw;
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  margin-top: 1.2rem;
+  padding-bottom: 4rem;
+}
+
+.tasks__container {
+  display: grid;
+  gap: 1rem;
+}
+
+.task {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: var(--task-backGroundColor);
+  border: 1px solid var(--grey-50);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  display: flex;
+  flex-direction: column;
+}
+
+.task:hover {
+  box-shadow: var(--shadow-4);
+}
+
+.task__block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task__title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task__title h2 {
+  margin-bottom: 0;
+  color: var(--text-color);
+}
+
+.task .material-symbols-outlined.check {
+  display: none;
+  font-size: 1rem;
+  color: var(--green-dark);
+}
+
+/* チェックが入っている時のみ表示 */
+.task .material-symbols-outlined.check.task-completed {
+  display: block;
+}
+
+
+/* タスクが完了した場合は.task-completedを付与。取り消し線 + チェックマーク */
+.task-completed h2 {
+  text-decoration: line-through;
+}
+
+/* Task Links */
+.task__links {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+}
+
+.task-links__edit,
+.task-links__delete {
+  display: inline-block;
+  background: transparent;
+  font-size: 0.75rem;
+  border: transparent;
+  cursor: pointer;
+}
+
+.task-links__edit {
+  margin-right: 10px;
+  color: var(--green-dark);
+}
+
+.task-links__delete {
+  color: var(--red-dark);
+}

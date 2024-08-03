@@ -4,7 +4,6 @@
 // Mongoose
 // https://mongoosejs.com/
 
-
 const mongoose = require("mongoose");
 
 
@@ -31,8 +30,23 @@ const TaskSchema = new mongoose.Schema({
   completed: {
     type: Boolean,
     default: false,
-  }
+  },
+
+  // createdAt: {
+  //   type: Date,
+  //   default: Date.now
+  // },
+  // updatedAt: {
+  //   type: Date,
+  //   default: Date.now
+  // }
 });
+
+// ドキュメントが保存される前にupdatedAtを現在の日付に更新する
+// TaskSchema.pre('save', function (next) {
+//   this.updatedAt = Date.now();
+//   next();
+// });
 
 // module.exports = mongoose.model("Task", TaskSchema);
 const Task = mongoose.model("Task", TaskSchema);

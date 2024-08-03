@@ -12,114 +12,101 @@
 
   <!-- Google アイコン -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style/edit.css">
 
   <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script defer type="module" src="../editTask.js"></script>
+  <script defer type="module" src="../js/editTask.js"></script>
 </head>
 <body>
 
-  <div class="container">
-    <form action="" class="single-task-form" id="js-single-task-form">
-      <h4>タスクの編集</h4>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__title">Mongo Todo App</h1>
 
-      <dl class="form__items">
-        <div class="form__item">
-          <div class="form__contents">
-            <dt class="form__title">Task ID</dt>
-            <dd class="form__content task-edit-id" id="js-task-edit-id"></dd>
-          </div>
+      <div class="header__mode" id="js-mode">
+        <!-- mode -->
+        <input type="checkbox" class="mode-check-box">
+      </div>
+    </div>
+  </header>
+
+
+  <form class="form-edit" id="js-single-task-form">
+    <h1 class="form-edit__title--edit">Task Edit</h1>
+
+    <dl class="form-edit__items">
+      <!-- task id -->
+      <div class="form-edit__item">
+        <div class="form-edit__contents">
+          <dt class="form-edit__title">Task ID</dt>
+          <dd class="form-edit__content task-edit-id" id="js-task-edit-id"></dd>
         </div>
-
-        <!-- name -->
-        <div class="form__item">
-          <div class="form__contents">
-            <dt class="form__title">
-              <label for="title">Title</label>
-            </dt>
-            <dd class="form_content">
-              <input 
-                type="text" 
-                name="name" 
-                class="task-edit-name js-task-edit-name"
-                id="title"
-                placeholder="title"
-              >
-            </dd>
-          </div>
-        </div>
-
-        <!-- memo -->
-        <div class="form__item">
-          <div class="form__contens">
-            <dt class="form__title">
-              <label for="memo">Memo</label>
-            </dt>
-            <dd class="form__content">
-              <textarea 
-                name="" 
-                class="form__textarea js-task-edit-memo"
-                id="memo"
-                placeholder="Keep it within 300 characters."
-                maxlength="300"
-              ></textarea>
-            </dd>
-          </div>
-        </div>
-
-        <div class="form__item">
-          <div class="form__contens">
-            <!-- <dt class="form__title">完了・未完了</dt> -->
-            <dd class="form__content form-control checkbox">
-              <label>
-                <input 
-                  type="checkbox" 
-                  name="completed" 
-                  class="task-edit-completed"
-                  id="js-task-edit-completed"
-                >
-                <span class="">完了・未完了</span>
-              </label>
-            </dd>
-          </div>
-        </div>
-
-
-      </dl>
-
-      <!-- <div class="form-control">
-        <label for="">タスクID</label>
-        <p class="task-edit-id" ></p>
-      </div> -->
-
-      <!-- <div class="form-control">
-        <label for="name">名前</label>
-        <input type="text" name="name" class="task-edit-name" id="js-task-edit-name">
-      </div> -->
-
-      <!-- <div class="form-control checkbox">
-        <label>
-          <input 
-            type="checkbox" 
-            name="completed" 
-            class="task-edit-completed"
-            id="js-task-edit-completed"
-          >
-          <span>完了・未完了</span>
-        </label>
-      </div> -->
-
-
-      <div class="edit-btn-wrapper">
-        <button type="submit" class="block btn task-edit-btn">EDIT</button>
       </div>
 
-      <div class="form-alert" id="js-form-alert"></div>
+      <!-- Title -->
+      <div class="form-edit__item">
+        <div class="form-edit__contents">
+          <dt class="form-edit__title">
+            <label for="title">Title</label>
+          </dt>
+          <dd class="form-edit__content">
+            <input 
+              type="text" 
+              name="name" 
+              class="form-edit__input js-task-edit-input"
+              id="title"
+              placeholder="title"
+            >
+          </dd>
+        </div>
+      </div>
 
-      <a href="../index.html" class="btn back-link">Back To Task Page</a>
+      <!-- Memo -->
+      <div class="form-edit__item">
+        <div class="form-edit__contens">
+          <dt class="form-edit__title">
+            <label for="memo">Memo</label>
+          </dt>
+          <dd class="form-edit__content">
+            <textarea 
+              name="" 
+              class="form-edit__textarea js-task-edit-textarea"
+              id="memo"
+              placeholder="Keep it within 300 characters."
+              maxlength="300"
+            ></textarea>
+          </dd>
+        </div>
+      </div>
 
-    </form>
-  </div>
+      <!-- 完了・未完了 -->
+      <div class="form-edit__item">
+        <div class="form-edit__contens">
+          <div class="form-edit__content  checkbox">
+            <label>
+              <input 
+                type="checkbox" 
+                name="completed" 
+                class="task-edit-completed"
+                id="js-task-edit-completed"
+              >
+              <span class="">完了・未完了</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </dl>
 
+
+    <div class="edit-btn-wrapper">
+      <button type="submit" class="block btn task-edit-btn">EDIT</button>
+    </div>
+    <div class="form-edit-alert" id="js-form-alert"></div>
+
+    <div class="back-top-btn-wrapper">
+      <a href="../index.html" class="btn back-top-btn">Back To Top</a>
+    </div>
+  </form>
 </body>
 </html>
